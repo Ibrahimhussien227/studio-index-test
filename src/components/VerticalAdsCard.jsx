@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import moment from "moment";
 
+import { Link } from "react-router-dom";
 import { ReactComponent as IconLike } from "../assets/IconLike.svg";
 import ImageSlider from "./ImageSlider";
 import { slides } from "../constants/index";
@@ -50,7 +51,9 @@ const VerticalAdsCard = ({ id, price, title, address, createdAt, seen }) => {
             />{" "}
           </div>
         </div>
-        <p className="font-bold text-sm">{title}</p>
+        <Link to={`/${id}`} className="font-bold text-sm">
+          {title}
+        </Link>
         <div className="flex flex-row justify-between text-gray-500 text-xs pb-3">
           <p>{address}</p>
           <p>
